@@ -6,5 +6,18 @@ for (let i = 0; i < 16; i++) {
         let square = document.createElement('div');
         square.classList.add('square');
         row.appendChild(square);
+    };
+};
+
+document.querySelectorAll('.square').forEach((square) => {
+    square.addEventListener('mouseover', function() {
+        square.style.backgroundColor = 'black';     
+    });
+});
+
+document.querySelector('.eraser').addEventListener('click', function() {
+    let squares = document.querySelectorAll('.square');
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = 'peachpuff';
     }
-}
+});
