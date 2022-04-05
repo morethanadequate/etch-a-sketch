@@ -13,10 +13,20 @@ function removeGrid() {
     }
 };
 
+function getRanRgb() {
+    let result = ['#'];
+    let hexRef = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];          
+    for (let i = 0; i < 6; i++) {
+        result.push(hexRef[Math.floor(Math.random() * 16)]);
+    };
+    return result.join('');
+};
+
 function addListeners() {
     document.querySelectorAll('.square').forEach((square) => {
         square.addEventListener('mouseover', function() {
-            square.style.backgroundColor = 'black';     
+            let color = getRanRgb();
+            square.style.background = color;     
         });
     });
 }
